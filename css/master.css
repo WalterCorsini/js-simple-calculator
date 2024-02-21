@@ -7,8 +7,17 @@
 /* COMMONS */
 body{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .body-container{
-    width: 50%;
+    width: 400px;
+    height: 600px;
     background-color: rgb(210, 210, 210);
+    margin: 500px;
 }
+.logo-container{
+    display: flex;
+    justify-content: center;
+}
+
