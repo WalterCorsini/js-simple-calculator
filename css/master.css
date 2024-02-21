@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMONS */
+body{
+    display: flex;
+}
+.body-container{
+    width: 50%;
+    background-color: rgb(210, 210, 210);
+}
