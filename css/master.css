@@ -9,15 +9,25 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'seven segment';
 }
 .body-container{
     width: 400px;
-    height: 600px;
-    background-color: rgb(210, 210, 210);
+    height: 500px;
     margin: 500px;
+    background-color: rgb(210, 210, 210);
 }
+
+/* LOGO */
 .logo-container{
     display: flex;
     justify-content: center;
 }
-
+/* DISPLAY */
+.display{
+    background-color: black;
+    font-size: 35px;
+    padding: 20px;
+    text-align: right;
+    color: rgb(8, 213, 161);
+}
