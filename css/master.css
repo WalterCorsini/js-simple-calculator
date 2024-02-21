@@ -9,15 +9,37 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'seven segment';
 }
+
 .body-container{
     width: 400px;
-    height: 500px;
-    margin: 500px;
+    
+    margin: 100px;
     background-color: rgb(210, 210, 210);
 }
 
+.numbers,
+.symbols{
+    border-radius: 5px;
+    box-shadow: 0 1px 0 1px rgb(76, 76, 76);
+    text-align: center;
+    font-family: 'arial', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+.bg-orange{
+    background-color: rgb(255, 159, 10);
+    color: white;
+}
+
+.bg-blue{
+    background-color: rgb(119, 168, 176);
+    color: white;
+}
+
+.bg-grey{
+    background-color: rgb(187, 187, 187);    
+}
 /* LOGO */
 .logo-container{
     display: flex;
@@ -30,4 +52,44 @@ body{
     padding: 20px;
     text-align: right;
     color: rgb(8, 213, 161);
+    font-family: 'seven segment';
+}
+/* BIG CONTAINER */
+.container{
+ display: flex;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
+/* CONTAINEE NUMBERS */
+.number{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.numbers{
+    width: calc(100% / 3 - 20px);
+    height: 70px;
+    line-height: 70px;
+    margin: 10px;
+}
+
+.special{
+    flex-grow: 1;
+}
+
+/* CONTAINERS SYMBOL */
+.symbol{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content:space-around;
+}
+
+.symbols{
+    height: calc(100% / 5 -10px);
+    margin: 5px;
+    height: 50px;
+    line-height: 50px;
 }
