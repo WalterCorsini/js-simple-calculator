@@ -1,17 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* COMMONS */
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.body-container{
+.logo-container img {
+    height: 100px;
+}
+
+/*margin 0 auto centra il nostro container*/
+.body-container {
     width: 400px;
     margin: 100px;
     background-color: rgb(210, 210, 210);
@@ -19,8 +24,21 @@ body{
     box-shadow: 0 3px 0 2px rgb(76, 76, 76);
 }
 
+.symbols.bg-orange:hover,
+.numbers.bg-orange:hover {
+    box-shadow: 0 1px 0 1px rgb(255, 159, 10);
+}
+
+.symbols.bg-blue:hover {
+    box-shadow: 0 1px 0 1px rgb(119, 168, 176);
+}
+
+.numbers.bg-grey:hover {
+    box-shadow: 0 1px 0 1px rgb(210, 210, 210);
+}
+
 .numbers,
-.symbols{
+.symbols {
     border-radius: 5px;
     box-shadow: 0 1px 0 1px rgb(76, 76, 76);
     text-align: center;
@@ -28,68 +46,81 @@ body{
     font-size: 30px;
 }
 
-.bg-orange{
+.bg-orange {
     background-color: rgb(255, 159, 10);
     color: white;
 }
 
-.bg-blue{
+.bg-blue {
     background-color: rgb(119, 168, 176);
     color: white;
 }
 
-.bg-grey{
-    background-color: rgb(187, 187, 187);    
+.bg-grey {
+    background-color: rgb(187, 187, 187);
 }
+
 /* LOGO */
-.logo-container{
+.logo-container {
     display: flex;
     justify-content: center;
 }
+
 /* DISPLAY */
-.display{
+.display {
     background-color: black;
     font-size: 35px;
     padding: 20px;
     text-align: right;
     color: rgb(8, 213, 161);
-    font-family: 'seven segment';
+    font-family: 'seven segment', 'arial', sans-serif;
 }
+
+pre {
+    font-family: 'seven segment', 'arial', sans-serif;
+}
+
 /* BIG CONTAINER */
-.container{
- display: flex;
- margin-top: 10px;
- margin-bottom: 10px;
+/* dare del padding al contenitore per spaziare il contenitore dal body container */
+.container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* CONTAINEE NUMBERS */
-.number{
+.number {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     margin-left: 10px;
 }
 
-.numbers{
+.numbers {
     width: calc(100% / 3 - 20px);
     height: 70px;
     line-height: 70px;
     margin: 10px;
 }
 
-.special{
+.numbers,
+.symbols {
+    font-family: cursive;
+}
+
+.special {
     flex-grow: 1;
 }
 
 /* CONTAINERS SYMBOL */
-.symbol{
+.symbol {
     display: flex;
     flex-direction: column;
     width: 30%;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
-.symbols{
+.symbols {
     height: calc(100% / 5);
     margin-right: 20px;
     margin-left: 5px;
