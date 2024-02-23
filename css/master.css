@@ -19,11 +19,11 @@ body {
 .body-container {
     width: 400px;
     margin: 100px;
-    background-color: rgb(210, 210, 210);
+    background-image: linear-gradient(to top left, #eeee 50%, rgb(190, 190, 190) 100%);
     border-radius: 10px;
     box-shadow: 0 3px 0 2px rgb(76, 76, 76);
 }
-
+/* 315deg */
 .symbols.bg-orange:hover,
 .numbers.bg-orange:hover {
     box-shadow: 0 1px 0 1px rgb(255, 159, 10);
