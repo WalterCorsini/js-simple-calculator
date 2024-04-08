@@ -49,6 +49,7 @@ body {
 #display {
     background-color: black;
     font-size: 35px;
+    height: 76px;
     padding: 20px;
     text-align: right;
     color: rgb(8, 213, 161);
