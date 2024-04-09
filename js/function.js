@@ -69,6 +69,7 @@ function createSymbol(numberSymbol) {
  * @returns {string}
  */
 function btnNumber() {
+  divDisplayElem = document.getElementById("display");
   if (divDisplayElem.innerHTML == 0) {
     divDisplayElem.innerHTML = "";
     divDisplayElem.innerHTML = this.innerHTML;
@@ -78,7 +79,11 @@ function btnNumber() {
   console.log(divDisplayElem.innerHTML);
   return divDisplayElem.innerHTML;
 }
+
+
+/** save value in two separated varaible and save operator */
 function btnOpe() {
+  divDisplayElem = document.getElementById("display");
   if (cont == 0) {
     valore1 = divDisplayElem.innerHTML;
     operator = this.innerHTML;
@@ -90,7 +95,9 @@ function btnOpe() {
   console.log(valore1, operator, valore2);
 }
 
+/** operation between two variables */
 function btnTotal() {
+  divDisplayElem = document.getElementById("display");
   valore2 = divDisplayElem.innerHTML;
   valore1 = parseInt(valore1);
   valore2 = parseInt(valore2);
