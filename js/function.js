@@ -94,6 +94,9 @@ function btnTotal() {
   valore2 = divDisplayElem.innerHTML;
   valore1 = parseInt(valore1);
   valore2 = parseInt(valore2);
+  if(operator == "x"){
+    operator = "*";
+  }
   valore1 = valore1 + operator + valore2;
   valore1 = eval(valore1);
   console.log(valore1, valore2, operator);
