@@ -69,40 +69,44 @@ function createSymbol(numberSymbol) {
  * @returns {string}
  */
 function btnNumber() {
-  if (divDisplayElem.innerHTML == 0) {
-    divDisplayElem.innerHTML = ""; 
-    divDisplayElem.innerHTML = this.innerHTML;
-  } else {    
-    divDisplayElem.innerHTML += this.innerHTML; 
-  }
+    if (divDisplayElem.innerHTML == 0) {
+      divDisplayElem.innerHTML = "";
+      divDisplayElem.innerHTML = this.innerHTML;
+    } else if(divDisplayElem.innerHTML.length <=5){
+      divDisplayElem.innerHTML += this.innerHTML;
+    }
   console.log(divDisplayElem.innerHTML);
-  return divDisplayElem.innerHTML
+  return divDisplayElem.innerHTML;
 }
-function btnOpe(){
-  if(cont == 0){
-  valore1 = divDisplayElem.innerHTML;
-  operator = this.innerHTML;
+function btnOpe() {
+  if (cont == 0) {
+    valore1 = divDisplayElem.innerHTML;
+    operator = this.innerHTML;
   } else {
     valore2 = divDisplayElem.innerHTML;
   }
-  cont +=1;
+  cont += 1;
   divDisplayElem.innerHTML = "";
-  console.log(valore1,operator,valore2);
+  console.log(valore1, operator, valore2);
 }
 
 function btnTotal() {
   valore2 = divDisplayElem.innerHTML;
-valore1 = parseInt(valore1);
-valore2 = parseInt(valore2);
-
-switch (operator){
-  case "+":
-    divDisplayElem.innerHTML = valore1 + valore2;
-  case "x":
-    divDisplayElem.innerHTML = valore1 * valore2;
-  case "-":
-    divDisplayElem.innerHTML = valore1 - valore2;
-  case "/":
-    divDisplayElem.innerHTML = valore1 / valore2;
-  }
+  valore1 = parseInt(valore1);
+  valore2 = parseInt(valore2);
+  valore1 = valore1 + operator + valore2;
+  valore1 = eval(valore1);
+  console.log(valore1, valore2, operator);
+  divDisplayElem.innerHTML = valore1;
+  // switch (operator){
+  //   case "+":
+  //     divDisplayElem.innerHTML = valore1 + valore2;
+  //     console.log(valore1 + valore2);
+  //   case "x":
+  //     divDisplayElem.innerHTML = valore1 * valore2;
+  //     case "-":
+  //       divDisplayElem.innerHTML = valore1 - valore2;
+  //       case "/":
+  //         divDisplayElem.innerHTML = valore1 / valore2;
+  //       }
 }

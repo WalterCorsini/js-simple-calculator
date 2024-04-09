@@ -32,7 +32,7 @@ rstButton.addEventListener("click",function(){
 
 //  btn click number
 for(let i = 0; i <= 9; i++){
-    valore1 = btnNumberArray[i].addEventListener("click", btnNumber);
+    btnNumberArray[i].addEventListener("click", btnNumber);
   }
 
   // btn operator
