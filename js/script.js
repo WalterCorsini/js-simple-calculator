@@ -36,16 +36,10 @@ for(let i = 0; i <= 9; i++){
   }
 
   // btn operator
-  for(let j = 1; j < 5; j++){
+for(let j = 1; j < 5; j++){
     btnSymbolArray[j].addEventListener("click", btnOpe);
-
 }
-
 // btn total
 btnEqual.addEventListener("click", btnTotal);
-
-
-
-
 
 

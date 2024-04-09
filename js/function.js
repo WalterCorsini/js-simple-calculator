@@ -69,12 +69,12 @@ function createSymbol(numberSymbol) {
  * @returns {string}
  */
 function btnNumber() {
-    if (divDisplayElem.innerHTML == 0) {
-      divDisplayElem.innerHTML = "";
-      divDisplayElem.innerHTML = this.innerHTML;
-    } else if(divDisplayElem.innerHTML.length <=5){
-      divDisplayElem.innerHTML += this.innerHTML;
-    }
+  if (divDisplayElem.innerHTML == 0) {
+    divDisplayElem.innerHTML = "";
+    divDisplayElem.innerHTML = this.innerHTML;
+  } else if (divDisplayElem.innerHTML.length <= 5) {
+    divDisplayElem.innerHTML += this.innerHTML;
+  }
   console.log(divDisplayElem.innerHTML);
   return divDisplayElem.innerHTML;
 }
@@ -94,22 +94,14 @@ function btnTotal() {
   valore2 = divDisplayElem.innerHTML;
   valore1 = parseInt(valore1);
   valore2 = parseInt(valore2);
-  if(operator == "x"){
+  if (operator == "x") {
     operator = "*";
   }
   valore1 = valore1 + operator + valore2;
   valore1 = eval(valore1);
   console.log(valore1, valore2, operator);
   divDisplayElem.innerHTML = valore1;
-  // switch (operator){
-  //   case "+":
-  //     divDisplayElem.innerHTML = valore1 + valore2;
-  //     console.log(valore1 + valore2);
-  //   case "x":
-  //     divDisplayElem.innerHTML = valore1 * valore2;
-  //     case "-":
-  //       divDisplayElem.innerHTML = valore1 - valore2;
-  //       case "/":
-  //         divDisplayElem.innerHTML = valore1 / valore2;
-  //       }
+  if ((valore2 == 0 && operator == "/") || (valore1 == 0 && operator == "/")) {
+    divDisplayElem.innerHTML = "ERROR";
+  }
 }
