@@ -63,26 +63,37 @@ function createSymbol(numberSymbol) {
   return divElem;
 }
 
+/**
+ * Description assign value to display
+ * @param {string}   // display value
+ * @returns {string}
+ */
 function btnNumber() {
-  let value;
-  if (divDisplayElem.innerText == "0") {
-    divDisplayElem.innerText = this.innerText;
-  } else {
-    value = divDisplayElem.innerText;
-    divDisplayElem.innerText += this.innerText;
+  if (divDisplayElem.innerHTML == 0) {
+    divDisplayElem.innerHTML = ""; 
+    divDisplayElem.innerHTML = this.innerHTML;
+  } else {    
+    divDisplayElem.innerHTML += this.innerHTML; 
   }
-  return divDisplayElem.innerText;
+  console.log(divDisplayElem.innerHTML);
+  return divDisplayElem.innerHTML
 }
-
-function btnOpe(valuee) {
-  const firstValue = valuee + this.innerText;
+function btnOpe(){
+  if(cont == 0){
+  valore1 = divDisplayElem.innerHTML;
+  operator = this.innerHTML;
+  } else {
+    valore2 = divDisplayElem.innerHTML;
+  }
+  cont +=1;
   divDisplayElem.innerHTML = "";
-  console.log(firstValue.innerText, "firstValue");
-  return firstValue;
+  console.log(valore1,operator,valore2);
 }
 
-// function btnTotal(valore1, valore2, ope) {
-//   console.log(typeof valore1, typeof valore2, typeof operator);
-//   totalBtnOpe = parseInt(valore1) + ope + parseInt(valore2);
-//   console.log(totalBtnOpe);
-// }
+function btnTotal() {
+  valore2 = divDisplayElem.innerHTML;
+alert(valore1,valore2);
+valore1 = parseInt(valore1);
+valore2 = parseInt(valore2);
+divDisplayElem.innerHTML = `${valore1} ${operator} ${valore2}`;
+}

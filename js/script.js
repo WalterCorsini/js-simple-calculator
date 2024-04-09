@@ -1,9 +1,10 @@
 const divNumberElem = document.querySelector(".number");
 const divSymbolElem = document.querySelector(".symbol");
 let divDisplayElem = document.getElementById("display");
-let valore1 = "";
-let valore2 = "";
+let valore1;
+let valore2;
 let cont = 0;
+let operator = "";
 
 // create number
 for (i = 1; i <= 11; i++) {
@@ -21,18 +22,23 @@ for (i = 1; i <= 5; i++) {
 
 const btnNumberArray = document.querySelectorAll(".btn-number");
 const btnSymbolArray = document.querySelectorAll(".btn-symbol");
+const btnEqual = document.querySelector(".btn-total");
 
 //  btn click number
 for(let i = 0; i <= 9; i++){
-    // if(cont = 0){
     valore1 = btnNumberArray[i].addEventListener("click", btnNumber);
-    // } else if(cont = 1){
-    // }
+  }
+
+  // btn operator
+  for(let j = 1; j < 5; j++){
+    btnSymbolArray[j].addEventListener("click", btnOpe);
+
 }
 
-for(let j = 1; j < 5; j++){
-    btnSymbolArray[j].addEventListener("click", btnOpe(valore1));
-}
+// btn total
+btnEqual.addEventListener("click", btnTotal);
+
+
 
 
 
