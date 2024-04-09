@@ -92,8 +92,17 @@ function btnOpe(){
 
 function btnTotal() {
   valore2 = divDisplayElem.innerHTML;
-alert(valore1,valore2);
 valore1 = parseInt(valore1);
 valore2 = parseInt(valore2);
-divDisplayElem.innerHTML = `${valore1} ${operator} ${valore2}`;
+
+switch (operator){
+  case "+":
+    divDisplayElem.innerHTML = valore1 + valore2;
+  case "x":
+    divDisplayElem.innerHTML = valore1 * valore2;
+  case "-":
+    divDisplayElem.innerHTML = valore1 - valore2;
+  case "/":
+    divDisplayElem.innerHTML = valore1 / valore2;
+  }
 }
