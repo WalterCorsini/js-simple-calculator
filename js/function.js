@@ -69,46 +69,73 @@ function createSymbol(numberSymbol) {
  * @returns {string}
  */
 function btnNumber() {
-  divDisplayElem = document.getElementById("display");
-  if (divDisplayElem.innerHTML == 0) {
-    divDisplayElem.innerHTML = "";
-    divDisplayElem.innerHTML = this.innerHTML;
-  } else if (divDisplayElem.innerHTML.length <= 5) {
-    divDisplayElem.innerHTML += this.innerHTML;
+  // refresh display after total
+  if (start !== false) {
+    start = false;
+    divDisplayElem.innerHTML = 0;
   }
-  console.log(divDisplayElem.innerHTML);
-  return divDisplayElem.innerHTML;
-}
 
+    divDisplayElem = document.getElementById("display");
+    if (divDisplayElem.innerHTML == 0) {
+      divDisplayElem.innerHTML = "";
+      divDisplayElem.innerHTML = this.innerHTML;
+    } else if (divDisplayElem.innerHTML.length <= 5) {
+      divDisplayElem.innerHTML += this.innerHTML;
+    }
+
+}
 
 /** save value in two separated varaible and save operator */
 function btnOpe() {
   divDisplayElem = document.getElementById("display");
-  if (cont == 0) {
-    valore1 = divDisplayElem.innerHTML;
-    operator = this.innerHTML;
-  } else {
-    valore2 = divDisplayElem.innerHTML;
+  if (divDisplayElem.innerHTML != 0) {
+    if (cont === 0) {
+      valore1 = divDisplayElem.innerHTML;
+      operator = this.innerHTML;
+      cont += 1;
+      result = true;
+      divDisplayElem.innerHTML = "";
+    }
   }
-  cont += 1;
-  divDisplayElem.innerHTML = "";
-  console.log(valore1, operator, valore2);
 }
 
 /** operation between two variables */
 function btnTotal() {
-  divDisplayElem = document.getElementById("display");
-  valore2 = divDisplayElem.innerHTML;
-  valore1 = parseInt(valore1);
-  valore2 = parseInt(valore2);
-  if (operator == "x") {
-    operator = "*";
+  if (result === true) {
+    divDisplayElem = document.getElementById("display");
+    valore2 = divDisplayElem.innerHTML;
+    valore1 = parseInt(valore1);
+    valore2 = parseInt(valore2);
+    if (operator == "x") {
+      operator = "*";
+    }
+    valore1 = valore1 + operator + valore2;
+    valore1 = eval(valore1);
+    valore1 = parseFloat(valore1.toFixed(2));
+    divDisplayElem.innerHTML = valore1;
+    // reset value
+    operator = "";
+    valore2 = "";
+    cont = 0;
+    result = false;
+    start = true;
+    if (
+      (valore2 == 0 && operator == "/") ||
+      (valore1 == 0 && operator == "/")
+    ) {
+      divDisplayElem.innerHTML = "ERROR";
+    }
+  } else {
+    valore1 = "";
+    divDisplayElem.innerHTML = 0;
   }
-  valore1 = valore1 + operator + valore2;
-  valore1 = eval(valore1);
-  console.log(valore1, valore2, operator);
-  divDisplayElem.innerHTML = valore1;
-  if ((valore2 == 0 && operator == "/") || (valore1 == 0 && operator == "/")) {
-    divDisplayElem.innerHTML = "ERROR";
-  }
+}
+
+function resetValue() {
+  valore1 = "";
+  valore2 = "";
+  operator = "";
+  cont = 0;
+  divDisplayElem.innerHTML = 0;
+  result = false;
 }

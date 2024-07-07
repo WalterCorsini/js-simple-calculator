@@ -125,12 +125,4 @@ pre {
 .numbers.bg-orange:hover {
     box-shadow: 0 1px 0 1px rgb(255, 159, 10);
 }
-/* 
-.symbols.bg-blue:hover {
-    box-shadow: 0 1px 0 1px rgb(119, 168, 176);
-}
-
-.numbers.bg-grey:hover {
-    box-shadow: 0 1px 0 1px rgb(210, 210, 210);
-} */
 
