@@ -41,8 +41,10 @@ body {
     justify-content: center;
 }
 
-.logo-container img {
+.logo-container {
     height: 100px;
+    line-height: 100px;
+    font-family:monospace;
 }
 
 /* DISPLAY */
@@ -72,16 +74,17 @@ pre {
 .number {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 80%;
+    gap: 20px;
     margin-left: 10px;
 }
 
 .numbers {
     width: calc(100% / 3 - 20px);
     aspect-ratio: 1;
-    line-height: 86px;
-    margin: 10px;
-
+    /* margin: 10px; */
+    
 }
 
 
@@ -89,7 +92,7 @@ pre {
 .symbol {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .symbols {
@@ -123,6 +126,14 @@ pre {
 
 .symbols.bg-orange:hover,
 .numbers.bg-orange:hover {
-    box-shadow: 0 1px 0 1px rgb(255, 159, 10);
+    background-color: rgb(240, 147, 9);
+}
+
+.numbers.bg-grey:hover {
+    background-color: rgb(162, 161, 161);
+}
+
+.symbols.bg-blue:hover {
+    background-color: rgb(103, 147, 153);
 }
 

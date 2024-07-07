@@ -1,16 +1,18 @@
 const divNumberElem = document.querySelector(".number");
 const divSymbolElem = document.querySelector(".symbol");
 let divDisplayElem = document.getElementById("display");
+
 let valore1;
 let valore2;
 let cont = 0;
 let operator = "";
 let result = false;
 let start = false;
+const arrayNumber = ['7','8','9','4','5','6','1','2','3','0','.','='];
 
 // create number
-for (i = 1; i <= 11; i++) {
-  const newNumber = createNumber(i);
+for (let i=0; i<arrayNumber.length; i++) {
+  const newNumber = createNumber(arrayNumber[i]);
   divNumberElem.append(newNumber);
 }
 

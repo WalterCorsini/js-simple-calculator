@@ -7,15 +7,12 @@ function createNumber(number) {
   const divElem = document.createElement("button");
   divElem.classList.add("numbers");
   divElem.innerText = number;
-  if (number < 10) {
+  if (!isNaN(number) || number === '.') {
     divElem.classList.add("bg-grey", "btn-number");
     divElem.innerText = number;
-  } else if (number == 10) {
-    divElem.classList.add("bg-grey", "btn-number", "special");
-    divElem.innerText = "0";
-  } else if (number === 11) {
+  } else {
     divElem.classList.add("bg-orange", "btn-total");
-    divElem.innerText = "=";
+    divElem.innerText = number;
   }
   return divElem;
 }
@@ -50,7 +47,7 @@ function createSymbol(numberSymbol) {
       break;
 
     case 4:
-      divElem.innerText = "x";
+      divElem.innerText = "*";
       divElem.classList.add = "moltpli";
       break;
 
@@ -96,6 +93,7 @@ function btnOpe() {
       result = true;
       divDisplayElem.innerHTML = "";
     }
+    console.log(valore1,operator);
   }
 }
 
@@ -104,15 +102,20 @@ function btnTotal() {
   if (result === true) {
     divDisplayElem = document.getElementById("display");
     valore2 = divDisplayElem.innerHTML;
-    valore1 = parseInt(valore1);
-    valore2 = parseInt(valore2);
-    if (operator == "x") {
-      operator = "*";
-    }
+    valore1 = parseFloat(valore1);
+    valore2 = parseFloat(valore2);
+    console.log(operator);
+    // prepare calc
     valore1 = valore1 + operator + valore2;
+    // run calc
     valore1 = eval(valore1);
-    valore1 = parseFloat(valore1.toFixed(2));
-    divDisplayElem.innerHTML = valore1;
+    valore1 = parseFloat(valore1.toFixed(5));
+    if(valore1 > 9999999999){
+      divDisplayElem.innerHTML = "ERROR";
+      valore1 = "";
+    } else {
+      divDisplayElem.innerHTML = valore1;
+    }
     // reset value
     operator = "";
     valore2 = "";
